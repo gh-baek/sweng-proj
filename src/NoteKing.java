@@ -39,6 +39,8 @@ public class NoteKing {
         // state 도 거기서 noteManager에게 전달NoteCreator creator = new NoteCreator(strategy);
         NoteManager noteManager = new NoteCreator(strategy).createNoteManager(user.getUserId(), state);
         noteManagers.add(noteManager);
+        // 노트 추가 시 마다 맵 갱신
+        noteCategoryListMap = NoteClassifier.classifyNotes(noteManagers);
     }
     public void deleteNoteManager(NoteManager noteManager){
         noteManagers.remove(noteManager);

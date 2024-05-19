@@ -24,6 +24,7 @@ public class NoteManager {
 
     private List<Observer> observers;
 
+    private String category;
     public NoteManager(String userId, Note note, NoteState state){
         this.noteUrl = getUrl();
         this.note = note;
@@ -38,7 +39,7 @@ public class NoteManager {
         setState(state);
         this.authUsers = new ArrayList<>();
         this.observers = new ArrayList<>();
-
+        this.category = "노트";
     }
 
     private String getUrl() {
@@ -79,6 +80,13 @@ public class NoteManager {
     public void addSummary(Summary summary){
         this.summary = summary;
         lastModifiedDate = LocalDate.now();
+    }
+
+    public String getCategory(){
+        return category;
+    }
+    public void setCategory(String category){
+        this.category = category;
     }
     // Observer 패턴을 위한 코드
     public void modifyNote(){
