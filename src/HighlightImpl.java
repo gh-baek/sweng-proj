@@ -29,6 +29,8 @@ public class HighlightImpl extends Highlight {
         }
         return null;
     }
+
+    @Override
     public void update(Note newNote) {
         // 새로운 노트의 TextContent 내용을 바탕으로 하이라이트를 갱신
 
