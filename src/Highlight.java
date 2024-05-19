@@ -1,8 +1,8 @@
-public abstract class Highlight {
-    int startPosition;
-    int endPosition;
-    String color;
-    String text;
+public abstract class Highlight implements Observer{
+    protected int startPosition;
+    protected int endPosition;
+    protected String color;
+    protected String text;
 
     // 생성자
     public Highlight(int startPosition, int endPosition, String color, String text) {
@@ -21,4 +21,6 @@ public abstract class Highlight {
     // 특정 Highlight 정보를 가져오는 추상 메소드
     abstract Highlight getHighlight(int index);
 
+    @Override
+    public abstract void update(Note newNote);
 }

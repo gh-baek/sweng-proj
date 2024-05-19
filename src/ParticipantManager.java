@@ -1,8 +1,21 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ParticipantManager {
-    List<Participant> participants;
+    private List<Participant> participants;
 
-    double calculateDiscussionShare(List<Note> notes) { return 0.0; }
-    void toggleParticipantVisibility(Note note) {}
+    public ParticipantManager() {
+        this.participants = new ArrayList<>();
+    }
+
+    public Map<Participant, Double> calculateDiscussionShare(List<Note> notes) {
+        Map<Participant, Double> discussionShare = new HashMap<>();
+        // 대화 점유율 구하기
+        return discussionShare;
+    }
+
+    public void toggleParticipantVisibility(Note note) {
+    }
 }

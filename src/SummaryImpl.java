@@ -68,5 +68,12 @@ public class SummaryImpl extends Summary {
         
         this.summaryText = String.join(". ", sentences) + ".";
     }
+    public void update(Note newNote){
+        String newText = newNote.getText();
+        if (!this.text.equals(newText)) {
+            this.text = newText;
+            summarize();
+        }
+    }
     
 }

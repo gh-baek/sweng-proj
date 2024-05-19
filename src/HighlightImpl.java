@@ -29,4 +29,36 @@ public class HighlightImpl extends Highlight {
         }
         return null;
     }
+    public void update(Note newNote) {
+        // 새로운 노트의 TextContent 내용을 바탕으로 하이라이트를 갱신
+
+        String newText = newNote.getText();
+
+        // 기존 text에서 startPosition과 endPosition에 해당하는 내용이
+        // newText에서 바뀌었다면
+        // 기존 하이라이트를 삭제
+        List<Highlight> highlightsToRemove = new ArrayList<>();
+        for (Highlight highlight : highlights) {
+            int start = highlight.startPosition;
+            int end = highlight.endPosition;
+
+            if (start < newText.length() && end <= newText.length()) {
+                String oldHighlightedText = highlight.text;
+                String newHighlightedText = newText.substring(start, end);
+
+                if (!oldHighlightedText.equals(newHighlightedText)) {
+                    highlightsToRemove.add(highlight);
+                    System.out.println("기존 하이라이트한 내용이 수정되었습니다. 하이라이트를 다시 시행해주세요.");
+                }
+            } else {
+                // If the range is out of the new text length, mark the highlight for removal
+                highlightsToRemove.add(highlight);
+                System.out.println("기존 하이라이트한 내용이 수정되었습니다. 하이라이트를 다시 시행해주세요.");
+            }
+        }
+
+        // Remove outdated highlights
+        highlights.removeAll(highlightsToRemove);
+    }
+
 }
