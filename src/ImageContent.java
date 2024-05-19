@@ -1,10 +1,13 @@
 public class ImageContent extends Content {
-    ImageContent(Object object) {
-        super(object);
+
+    public ImageContent(Object content) {
+        super(content);
     }
 
     @Override
-    public void showContent(){
-        //show Image content
+    public void showContent() {
+    }
+    public Content convertImg2Txt() {
+        return null;
     }
 }

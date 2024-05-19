@@ -1,7 +1,9 @@
 public abstract class Content {
     protected Object content;
-    protected Content(Object object){
-        this.content = object;
+
+    public Content(Object content) {
+        this.content = content;
     }
+
     public abstract void showContent();
 }

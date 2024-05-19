@@ -1,10 +1,18 @@
+import java.util.Map;
+
 public class VoiceContent extends Content {
-    VoiceContent(Object object) {
-        super(object);
+    private ParticipantManager participants;
+    private Map<Double, String> discussionShare;
+
+    public VoiceContent(Object content) {
+        super(content);
     }
 
     @Override
-    public void showContent(){
-        //show Image content
+    public void showContent() {
+    }
+
+    public Content convertVoc2Txt() {
+        return null;
     }
 }
