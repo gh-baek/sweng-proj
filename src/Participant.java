@@ -1,19 +1,39 @@
-import java.util.Map;
-
 public class Participant {
+    // Fields
     private String name;
-    private Map<Double, String> discussion;
+    private int speakingTime;
+    private boolean toggleState;
 
-    public Participant(String name, Map<Double, String> discussion) {
+    // Constructor
+    public Participant(String name) {
         this.name = name;
-        this.discussion = discussion;
+        this.speakingTime = 0;
+        this.toggleState = false;
     }
 
+    // Methods
+    public void addSpeakingTime(int time) {
+        // 메서드 원형
+    }
+
+    public void toggleParticipant() {
+        // 메서드 원형
+    }
+
+    public boolean isToggled() {
+        return toggleState;
+    }
+
+    // Getters
     public String getName() {
         return name;
     }
 
-    public Map<Double, String> getDiscussion() {
-        return discussion;
+    public int getSpeakingTime() {
+        return speakingTime;
+    }
+
+    public boolean getToggleState() {
+        return toggleState;
     }
 }
